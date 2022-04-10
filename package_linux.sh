@@ -92,22 +92,22 @@ run_build -l zlib build
 run_build -l zlib deploy
 
 # configure and build mbedtls
-run_build -l mbedtls pull
-run_build -l mbedtls configure
-run_build -l mbedtls build
-run_build -l mbedtls deploy
+#run_build -l mbedtls pull
+#run_build -l mbedtls configure
+#run_build -l mbedtls build
+#run_build -l mbedtls deploy
 
 # configure and build mbedtls
-run_build -l curl pull
-run_build -l curl configure
-run_build -l curl build
-run_build -l curl deploy
+run_build -l freeimage pull
+run_build -l freeimage configure
+run_build -l freeimage build
+run_build -l freeimage deploy
 
 # configure and build mbedtls
-run_build -l physx pull
-run_build -l physx configure
-run_build -l physx build
-run_build -l physx deploy
+run_build -l freetype pull
+run_build -l freetype configure
+run_build -l freetype build
+run_build -l freetype deploy
 
 # configure and build all other libs
 #run_build configure
