@@ -98,10 +98,10 @@ run_build -l zlib deploy
 #run_build -l mbedtls deploy
 
 # configure and build mbedtls
-run_build -l embree pull
-run_build -l embree configure
-run_build -l embree build
-run_build -l embree deploy
+run_build -l gtest pull
+run_build -l gtest configure
+run_build -l gtest build
+run_build -l gtest deploy
 
 # configure and build all other libs
 #run_build configure
