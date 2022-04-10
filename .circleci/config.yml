@@ -7,8 +7,11 @@ jobs:
     working_directory: ~/work
     steps:
       - checkout
+      - run: chmod +x setup_linux.sh          
+      - run: ./setup_linux.sh 
       - run: chmod +x package_linux.sh 
       - run: ./package_linux.sh 
+
       - store_artifacts:
           path: ~/work/dependencies_linux.zip
 
