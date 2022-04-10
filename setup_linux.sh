@@ -24,4 +24,4 @@ sudo apt-get install libcg libcggl
 
 echo Installing python...
 sudo apt-get install python3 python-is-python3 pip
-pip install jinja2
+pip3 install jinja2

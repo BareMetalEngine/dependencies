@@ -12,7 +12,7 @@ function check_bin() {
 
 # python lib checker
 function check_pip() {
-    pip show $1 > /dev/null
+    pip3 show $1 > /dev/null
     if [ $? -ne 0 ]
     then
         echo "$1 is not installed" >&2
@@ -83,23 +83,24 @@ check_lib libcg
 check_lib libcggl
 
 # download all libs
-run_build pull
+#run_build pull
 
 # configure and build zlib
-#run_build -l zlib pull
+run_build -l zlib pull
 run_build -l zlib configure
 run_build -l zlib build
 run_build -l zlib deploy
 
 # configure and build mbedtls
+run_build -l mbedtls pull
 run_build -l mbedtls configure
 run_build -l mbedtls build
 run_build -l mbedtls deploy
 
 # configure and build all other libs
-run_build configure
-run_build build
-run_build deploy
+#run_build configure
+#run_build build
+#run_build deploy
 
 ###############################################
 
