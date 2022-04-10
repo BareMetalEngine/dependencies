@@ -98,10 +98,10 @@ run_build -l zlib deploy
 #run_build -l mbedtls deploy
 
 # configure and build mbedtls
-run_build -l llvm pull
-run_build -l llvm configure
-run_build -l llvm build
-run_build -l llvm deploy
+run_build -l dxc pull
+run_build -l dxc configure
+run_build -l dxc build
+run_build -l dxc deploy
 
 # configure and build all other libs
 #run_build configure
