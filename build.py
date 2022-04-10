@@ -843,7 +843,7 @@ def lib_pull_git(args, lib, cloneOnly=False):
         # if we don't have the data, clone it (if allowed)
         print("Cloning '%s'..." % lib.name)
 
-        run("git clone {repo} {path}".format(repo=lib.repo, path=lib.source_path))
+        run("git clone --depth 1 {repo} {path}".format(repo=lib.repo, path=lib.source_path))
 
         # if we still don't have it it's a problem
         if not os.path.isdir(lib.source_path):
