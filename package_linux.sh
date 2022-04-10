@@ -86,14 +86,14 @@ check_lib libcggl
 #run_build pull
 
 # configure and build zlib
-#run_build -l zlib configure
-#run_build -l zlib build
-#run_build -l zlib deploy
+run_build -l zlib configure
+run_build -l zlib build
+run_build -l zlib deploy
 
 # configure and build mbedtls
-#run_build -l mbedtls configure
-#run_build -l mbedtls build
-#run_build -l mbedtls deploy
+run_build -l mbedtls configure
+run_build -l mbedtls build
+run_build -l mbedtls deploy
 
 # configure and build mbedtls
 run_build -l curl pull
