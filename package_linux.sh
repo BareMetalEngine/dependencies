@@ -98,22 +98,10 @@ run_build -l zlib deploy
 #run_build -l mbedtls deploy
 
 # configure and build mbedtls
-run_build -l ofbx pull
-run_build -l ofbx configure
-run_build -l ofbx build
-run_build -l ofbx deploy
-
-# configure and build mbedtls
-run_build -l squish pull
-run_build -l squish configure
-run_build -l squish build
-run_build -l squish deploy
-
-# configure and build mbedtls
-run_build -l lz4 pull
-run_build -l lz4 configure
-run_build -l lz4 build
-run_build -l lz4 deploy
+run_build -l llvm pull
+run_build -l llvm configure
+run_build -l llvm build
+run_build -l llvm deploy
 
 # configure and build all other libs
 #run_build configure
