@@ -82,28 +82,43 @@ check_lib freeglut3-dev
 check_lib libcg
 check_lib libcggl
 
-# download all libs
-run_build pull
+# no arguments supplied, build all
+if [ $# -eq 0 ]
+then
+    echo "No arguments supplied, building all libs"
 
-# configure and build zlib
-#run_build -l zlib pull
-run_build -l zlib configure
-run_build -l zlib build
-run_build -l zlib deploy
+    # download all libs
+    run_build pull
 
-# configure and build mbedtls
-#run_build -l mbedtls pull
-run_build -l mbedtls configure
-run_build -l mbedtls build
-run_build -l mbedtls deploy
+    # configure and build zlib
+    #run_build -l zlib pull
+    run_build -l zlib configure
+    run_build -l zlib build
+    run_build -l zlib deploy
 
-# configure and build all other libs
-run_build configure
-run_build build
-run_build deploy
+    # configure and build mbedtls
+    #run_build -l mbedtls pull
+    run_build -l mbedtls configure
+    run_build -l mbedtls build
+    run_build -l mbedtls deploy
+
+    # configure and build all other libs
+    run_build configure
+    run_build build
+    run_build deploy
+
+elif [ $# -eq 1 ]   
+then
+    echo "Building single library: $1"
+
+    run_build -l $1 pull
+    run_build -l $1 configure
+    run_build -l $1 build
+    run_build -l $1 deploy
+fi
 
 ###############################################
 
 # package the libs
-mkdir .artifacts
-pushd .out; zip -r ../.artifacts/dependencies_linux.zip .; popd
+#mkdir artifacts
+#pushd .out; zip -r ../artifacts/dependencies_linux.zip .; popd
