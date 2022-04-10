@@ -47,12 +47,12 @@ function run_build() {
 ###############################################
 
 # check if python is installed
-if ! hash python; then
+if ! hash python3; then
     echo "Python is not installed"
     exit 1
 else    
     # check Python version
-    ver=$(python -V 2>&1 | sed 's/.* \([0-9]\).\([0-9]\).*/\1\2/')
+    ver=$(python3 -V 2>&1 | sed 's/.* \([0-9]\).\([0-9]\).*/\1\2/')
     if [ "$ver" -lt "30" ]; then
         echo "This script requires python 3.0 or greater"
         exit 1

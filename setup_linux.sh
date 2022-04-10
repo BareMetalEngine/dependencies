@@ -7,7 +7,7 @@ fi
 
 echo Updating...
 sudo apt-get update
-sudo apt-get upgrade -y
+#sudo apt-get upgrade -y
 
 echo Installing build tools...
 sudo apt-get install build-essential clang
