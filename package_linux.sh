@@ -98,10 +98,10 @@ run_build -l zlib deploy
 #run_build -l mbedtls deploy
 
 # configure and build mbedtls
-run_build -l openal pull
-run_build -l openal configure
-run_build -l openal build
-run_build -l openal deploy
+run_build -l lua pull
+run_build -l lua configure
+run_build -l lua build
+run_build -l lua deploy
 
 # configure and build all other libs
 #run_build configure
