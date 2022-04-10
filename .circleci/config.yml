@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+  build:
+    machine: 
+      image: ubuntu-2004:202111-02
+    working_directory: ~/work
+    steps:
+      - checkout
+      - run: chmod +x package_linux.sh 
+      - run: ./package_linux.sh 
+      - store_artifacts:
+          path: ~/work/dependencies_linux.zip
+
+workflows:
+  build-and-pack:
+    jobs:
+      - build
