@@ -86,16 +86,26 @@ check_lib libcggl
 #run_build pull
 
 # configure and build zlib
-run_build -l zlib pull
-run_build -l zlib configure
-run_build -l zlib build
-run_build -l zlib deploy
+#run_build -l zlib configure
+#run_build -l zlib build
+#run_build -l zlib deploy
 
 # configure and build mbedtls
-run_build -l mbedtls pull
-run_build -l mbedtls configure
-run_build -l mbedtls build
-run_build -l mbedtls deploy
+#run_build -l mbedtls configure
+#run_build -l mbedtls build
+#run_build -l mbedtls deploy
+
+# configure and build mbedtls
+run_build -l curl pull
+run_build -l curl configure
+run_build -l curl build
+run_build -l curl deploy
+
+# configure and build mbedtls
+run_build -l physx pull
+run_build -l physx configure
+run_build -l physx build
+run_build -l physx deploy
 
 # configure and build all other libs
 #run_build configure
@@ -105,4 +115,5 @@ run_build -l mbedtls deploy
 ###############################################
 
 # package the libs
-pushd .out; zip -r ../dependencies_linux.zip .; popd
+mkdir .artifacts
+pushd .out; zip -r ../.artifacts/dependencies_linux.zip .; popd
