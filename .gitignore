@@ -1,7 +1,0 @@
-# Ignore Onion library build directories
-.build
-.out
-.packages
-.source
-.packages
-.commit
